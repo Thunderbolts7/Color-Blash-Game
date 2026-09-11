@@ -1,0 +1,11 @@
+{
+  "name": "thunderbolts-color-clash",
+  "version": "1.0.0",
+  "description": "Online multiplayer UNO-style card game with original ThunderBolts Color Clash branding",
+  "main": "server.js",
+  "scripts": { "start": "node server.js", "dev": "node server.js" },
+  "dependencies": {
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  }
+}

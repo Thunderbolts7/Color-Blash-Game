@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>⚡ ThunderBolts Color Clash ⚡</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="storm"></div>
+<main>
+<section id="lobby" class="panel">
+<h1>⚡ THUNDERBOLTS<br><span>COLOR CLASH</span> ⚡</h1>
+<p class="tag">Play an electrifying color-card battle with your friends!</p>
+<input id="name" placeholder="Your player name" maxlength="20">
+<div class="modes">
+<button onclick="createRoom()">⚡ Create Room</button>
+<div class="join"><input id="code" placeholder="ROOM CODE" maxlength="6"><button onclick="joinRoom()">Join Room</button></div>
+</div>
+<div id="roomInfo"></div><div id="players"></div>
+<button id="start" class="hidden" onclick="startGame()">▶ START GAME</button>
+<p id="error"></p></section>
+
+<section id="game" class="hidden">
+<header><h2>⚡ ThunderBolts Color Clash</h2><div id="status"></div></header>
+<div id="opponents"></div>
+<div class="table">
+<button id="drawPile" class="pile back" onclick="drawCard()">⚡</button>
+<div id="discard" class="pile"></div>
+<div id="colorIndicator">ACTIVE COLOR</div>
+</div>
+<div id="controls"><button class="uno" onclick="callUno()">UNO! 🔥</button><button class="catch" onclick="catchUno()">CATCH!</button></div>
+<div id="hand"></div>
+</section>
+</main>
+<div id="colorPicker" class="modal hidden"><div class="picker"><h3>Choose a color</h3><button onclick="chooseColor('red')">🔴 RED</button><button onclick="chooseColor('blue')">🔵 BLUE</button><button onclick="chooseColor('green')">🟢 GREEN</button><button onclick="chooseColor('yellow')">🟡 YELLOW</button></div></div>
+<div id="winner" class="modal hidden"><div class="winner"><h1>🏆 WINNER! 🏆</h1><h2 id="winnerName"></h2><button onclick="location.reload()">Play Again</button></div></div>
+<script src="/socket.io/socket.io.js"></script><script src="script.js"></script></body></html>
